@@ -32,9 +32,8 @@ export class CalculatorComponent {
       return;
     }
 
-    if (this.currentValue === '') {
-      this.operator = op;
-      return;
+    if (this.currentValue !== '' && this.previousValue !== '') {
+      this.calculate();
     }
 
     this.previousValue = this.currentValue;
@@ -45,12 +44,8 @@ export class CalculatorComponent {
   calculate(): void {
 
     if (
-      this.previousValue === '' ||
-      this.currentValue === '' ||
-      this.operator === ''
-    ) {
-      return;
-    }
+      !this.previousValue ||
+      !this.currentValue) return;
 
     const prev = parseFloat(this.previousValue);
     const current = parseFloat(this.currentValue);
