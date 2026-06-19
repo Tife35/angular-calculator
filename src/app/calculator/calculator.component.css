@@ -1,0 +1,78 @@
+.calculator {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.display {
+  width: 100%;
+  min-height: 80px;
+  background-color: #222;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: right;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow-x: auto;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 18px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #ffffff;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Make AC stand out */
+button:first-child {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+/* Make equal button stand out */
+button:last-child {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .calculator {
+    max-width: 95%;
+    padding: 15px;
+  }
+
+  .display {
+    font-size: 1.6rem;
+    min-height: 70px;
+  }
+
+  button {
+    padding: 15px;
+    font-size: 1rem;
+  }
+}
